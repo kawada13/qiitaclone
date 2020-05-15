@@ -44,4 +44,10 @@ class PostContoroller extends Controller
         $article = Post::where('id', $id)->first();
         return view('auth.item', compact('article'));
     }
+
+    public function showTopPage()
+   {
+    $articles = Post::orderBy('created_at', 'asc')->get();
+    return view('top', compact('articles'));
+   }
 }
