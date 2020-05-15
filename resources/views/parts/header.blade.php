@@ -24,6 +24,16 @@
         <a class="nav-link text-white" href="#">ストック一覧</a>
       </li>
       <li class="nav-item ml-2">
+        <a class="nav-link text-white" href="#">
+        <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <input type="submit" value="ログアウト" >
+
+        </form> 
+
+        </a>
+      </li>
+      <li class="nav-item ml-2">
         <a class="nav-link text-white" id="post-link" href="/drafts/new">投稿する</a>
       </li>
       <li class="nav-item ml-2">
