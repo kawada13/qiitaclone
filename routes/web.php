@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth'], function () {
+Route::get('/drafts/new', 'PostContoroller@index')->name('drafts.new');
+Route::post('/drafts/new', 'PostContoroller@postArticle')->name('drafts.new.posts');
+
+});
